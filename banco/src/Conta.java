@@ -41,7 +41,10 @@ public class Conta {
     public void depositar(Double valor){
 		saldo += valor;
 	}
+    public void verificaSaldo(){
+		System.out.println("Valor do Saldo conta1: "+getSaldo());
+	}
 
 
-    
+
 }

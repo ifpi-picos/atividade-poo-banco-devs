@@ -8,6 +8,8 @@ public class App {
 
 
         
+        conta1.depositar(50.0);
+        conta1.verificaSaldo();
 
       
     }
