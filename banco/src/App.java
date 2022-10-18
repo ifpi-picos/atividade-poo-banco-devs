@@ -16,6 +16,8 @@ public class App {
 
 
         
+        conta1.depositar(50.0);
+        conta1.verificaSaldo();
 
 >>>>>>> f78fd7b1be85a30c15afc4b21ff9ca51ab47d7a4
       
