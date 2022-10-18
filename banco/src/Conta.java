@@ -2,9 +2,22 @@ public class Conta {
     private int numAgencia;
     private int numConta;
     private double saldo;
+    private Cliente cpf;
+
+    public Conta(int numAgencia, int numConta, double saldo, Cliente cpf){
+        this.numAgencia = numAgencia;
+        this.numConta = numConta;
+        this.saldo = saldo;
+        this.cpf = cpf;
+    }
 
 
-
+    public Cliente getCpf() {
+        return cpf;
+    }
+    public void setCpf(Cliente cpf) {
+        this.cpf = cpf;
+    }
     public Conta(int i, int j, int k) {
     }
     public int getNumAgencia() {
