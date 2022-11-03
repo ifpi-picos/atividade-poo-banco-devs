@@ -1,15 +1,12 @@
-
 import java.util.Date;
 
-public class Cliente {
+public class Cliente  {
     private String nome;
     private String cpf;
     private Date dataNasc;
-    private Endereco endereco;
+    private String endereco;
 
-
-
-    public Cliente(String nome, String cpf,Date dataNasc, Endereco endereco) {
+    public Cliente(String nome, String cpf,Date dataNasc, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNasc = dataNasc;
@@ -36,7 +33,7 @@ public class Cliente {
     public Endereco getEndereco() {
         return endereco;
     }
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 

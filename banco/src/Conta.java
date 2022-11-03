@@ -1,4 +1,4 @@
-public class Conta {
+public class Conta{
     private int numAgencia;
     private int numConta;
     private double saldo;
