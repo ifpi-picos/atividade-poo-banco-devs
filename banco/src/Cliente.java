@@ -1,46 +1,35 @@
-
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cliente {
+
     private String nome;
-    private String cpf;
-    private Date dataNasc;
-    private Endereco endereco;
+    private String CPF;
+    private LocalDate dataNascimento;
+    private List<Endereco> enderecos = new ArrayList<>();
 
-
-
-    public Cliente(String nome, String cpf,Date dataNasc, Endereco endereco) {
+    public Cliente(String nome, String CPF, LocalDate dataNascimento, Endereco endereco) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.dataNasc = dataNasc;
-        this.endereco = endereco;
+        this.CPF = CPF;
+        this.dataNascimento = dataNascimento;
+        this.enderecos.add(endereco);
     }
+
     public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public String getCpf() {
-        return cpf;
-    }
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-    public Date getDataNasc() {
-        return dataNasc;
-    }
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
-    }
-    public Endereco getEndereco() {
-        return endereco;
-    }
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+        return this.nome;
     }
 
-    
+    public String getCPF() {
+        return this.CPF;
+    }
 
+    public LocalDate getDataNascimento() {
+        return this.dataNascimento;
+    }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
 
 }

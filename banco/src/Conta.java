@@ -1,50 +1,67 @@
 public class Conta {
-    private int numAgencia;
-    private int numConta;
-    private double saldo;
-    private Cliente cpf;
 
-    public Conta(int numAgencia, int numConta, double saldo, Cliente cpf){
-        this.numAgencia = numAgencia;
-        this.numConta = numConta;
+    private int agencia;
+    private int numero;
+    protected double saldo;
+    private Cliente nomeCliente;
+
+  
+
+  
+    public Conta(int agencia, int numero, double saldo, Cliente nomeCliente) {
+        this.agencia = agencia;
+        this.numero = numero;
         this.saldo = saldo;
-        this.cpf = cpf;
+        this.nomeCliente = nomeCliente;
+        
     }
 
+   
+    public void deposita(double valor) {
+        if (valor > 0) {
+            this.saldo = this.saldo + valor;
+            System.out.println("Depósito realizado com sucesso! Valor do depósito R$:" + valor);
+            this.enviaNotificacao("Depósito", valor);
+        } else {
+            System.out.println(
+                    "Não é possível efetuar esta operação! Só é possível depositar valores acima deste valor: R$0.0");
+        }
+    }
 
-    public Cliente getCpf() {
-        return cpf;
+  
+    public boolean saca(double valor) {
+        return false;
     }
-    public void setCpf(Cliente cpf) {
-        this.cpf = cpf;
+
+   
+    public void transfere(double valor, Conta contaDestino) {
+        System.out.println("Transferindo valor solicitado...");
+        boolean saqueComSucesso = this.saca(valor);
+        if (saqueComSucesso) {
+            contaDestino.deposita(valor);
+            this.enviaNotificacao("Transferência", valor);
+        }
     }
-    public Conta(int i, int j, int k) {
+
+    protected void enviaNotificacao(String operacao, double valor) {
+        new Notificacao().enviaEmail(operacao, valor);
     }
-    public int getNumAgencia() {
-        return numAgencia;
+
+    public int getAgencia() {
+        return this.agencia;
     }
-    public void setNumAgencia(int numAgencia) {
-        this.numAgencia = numAgencia;
+
+    public int getNumero() {
+        return numero;
     }
-    public int getNumConta() {
-        return numConta;
-    }
-    public void setNumConta(int numConta) {
-        this.numConta = numConta;
-    }
+
     public double getSaldo() {
         return saldo;
     }
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-    public void depositar(Double valor){
-		saldo += valor;
-	}
-    public void verificaSaldo(){
-		System.out.println("Valor do Saldo conta1: "+getSaldo());
-	}
 
+    public Cliente getnomeCliente() {
+        return nomeCliente;
+    }
 
 
 }
