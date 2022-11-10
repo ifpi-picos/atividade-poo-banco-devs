@@ -20,11 +20,12 @@ public class Conta {
     public void deposita(double valor) {
         if (valor > 0) {
             this.saldo = this.saldo + valor;
-            System.out.println("Depósito realizado com sucesso! Valor do depósito R$:" + valor);
-            this.enviaNotificacao("Depósito", valor);
+            
+            System.out.println("Deposito realizado com sucesso! Valor do deposito R$:" + valor);
+            this.enviaNotificacao("Dep0sito", valor);
         } else {
             System.out.println(
-                    "Não é possível efetuar esta operação! Só é possível depositar valores acima deste valor: R$0.0");
+                    "Nao e possivel efetuar esta operacao! So e possivel depositar valores acima deste valor: R$0.0");
         }
     }
 
@@ -39,7 +40,8 @@ public class Conta {
         boolean saqueComSucesso = this.saca(valor);
         if (saqueComSucesso) {
             contaDestino.deposita(valor);
-            this.enviaNotificacao("Transferência", valor);
+            this.saldo = this.saldo - (valor * 0.05);
+            this.enviaNotificacao("Transferencia", valor);
         }
     }
 

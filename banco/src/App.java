@@ -56,6 +56,10 @@ public class App {
         System.out.println("O novo saldo e " + cc1.getSaldo());
 
 
+        cc1.saca(40);
+        System.out.println("saldo" + cc1.getSaldo());
+
+
 
 
 

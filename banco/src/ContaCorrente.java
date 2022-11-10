@@ -24,7 +24,7 @@ public class ContaCorrente extends Conta {
             super.enviaNotificacao("Saque", valor);
             return true;
         } else {
-            System.out.println("Você não possui saldo suficente! Valor do saque solicitado: R$" + valor);
+            System.out.println("Voce nao possui saldo suficente! Valor do saque solicitado: R$" + valor);
             return false;
         }
     }
